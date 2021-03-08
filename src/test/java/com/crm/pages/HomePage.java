@@ -14,40 +14,42 @@ public class HomePage {
     public WebElement homebutton;
 
 
-    @FindBy(xpath = "//a[@href='#like']")
+    @FindBy(xpath = "//a[@href='#like'][1]")
     public WebElement likeButton;
 
-    @FindBy(css = "span[id='feed-post-more-114']")
+    @FindBy(css = "span[id*='feed-post-more-']")
     public WebElement moreButton;
 
     @FindBy(xpath = "//span[.='Add to favorites'][1]")
     public WebElement favButton;
 
-    @FindBy(xpath = "//span[.='Remove from favorites'][1]")
+    @FindBy(xpath = "//*[text() = 'Remove from favorites']")
     public WebElement RemovefavButton;
 
 
 
-    @FindBy(id = "post-menu-807-link-text")
+    @FindBy(xpath = "//*[text() = 'Copy link']")
     public WebElement copyButton;
 
     @FindBy(xpath = "//*[text() = 'Add recipients'][1]")
     public WebElement recipientsButton;
 
 
-    @FindBy(id = "U693")
+    @FindBy(css = "a[id$='_U693']")
     public WebElement h1user;
 
     @FindBy(id = "sharePostSubmitButton")
     public WebElement addButton;
 
-    @FindBy(xpath = "//*[@id=\"feed-com-text-inner-BLOG_COMMENT-23\"]")
+    @FindBy(xpath = "//a[@class='blog-p-user-name']")
     public WebElement sharedMessage;
 
     @FindBy(id = "bx-ilike-result-reaction-like-BLOG_POST_115-1614864245")
     public WebElement likeButtonEmoji;
 
-    @FindBy(id = "post-menu-807-link-icon-done")
-    public WebElement doneEmoji;
+    @FindBy(xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement closeWindowX;
+
+
 
 }

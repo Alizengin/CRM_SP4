@@ -1,4 +1,4 @@
-@wip
+@reg
 Feature: Message Functionality
 
 Background:
@@ -10,12 +10,10 @@ Background:
     Then like is displayed
 
   Scenario: User can add a message to favorites
-      When the user clicks on more tab
       And clicks on add to favorites
       Then add to favorites needs to change
 
   Scenario: User can copy the link of a message
-    When the user clicks on more tab
     And clicks on copy button
     Then done icon should be displayed
 

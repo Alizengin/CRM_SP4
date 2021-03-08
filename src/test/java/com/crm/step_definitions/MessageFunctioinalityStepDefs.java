@@ -4,11 +4,15 @@ import com.crm.pages.HomePage;
 import com.crm.pages.LoginPage;
 import com.crm.utilities.BrowserUtils;
 import com.crm.utilities.ConfigurationReader;
+import com.crm.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 public class MessageFunctioinalityStepDefs {
     @Given("the user logged in as user")
@@ -42,36 +46,46 @@ public class MessageFunctioinalityStepDefs {
 
     @When("selects user from People")
     public void selects_user_from_People() {
+        BrowserUtils.waitFor(3);
       new HomePage().h1user.click();
     }
     @When("clicks on Add button")
     public void clicks_on_Add_button() {
-        new HomePage().addButton.click();
         BrowserUtils.waitFor(2);
+        new HomePage().closeWindowX.click();
+        new HomePage().addButton.click();
+
 
     }
     @Then("Shared with message should appear")
     public void shared_with_message_should_appear() {
+        BrowserUtils.waitFor(2);
         Assert.assertTrue(new HomePage().sharedMessage.isDisplayed());
     }
 
 
     @Then("done icon should be displayed")
     public void done_icon_should_be_displayed() {
-        BrowserUtils.waitFor(4);
+        BrowserUtils.waitFor(3);
 
-        Assert.assertTrue(new HomePage().doneEmoji.isDisplayed());
+      // Assert.assertTrue(new HomePage().doneEmoji.isDisplayed());
+        String id = new HomePage().copyButton.getAttribute("id");
+        String idEmoji = id.substring(0,14);
+        WebElement doneEmoji = Driver.get().findElement(By.id(idEmoji+"link-icon-done"));
+        Assert.assertTrue(doneEmoji.isDisplayed());
+
     }
     @When("clicks on add to favorites")
     public void clicks_on_add_to_favorites() {
-        new HomePage().moreButton.click();
         BrowserUtils.waitFor(2);
 
-        if (new HomePage().RemovefavButton.isDisplayed()){
+        try {
+            new HomePage().favButton.click();
+        }catch (Exception e){
             new HomePage().RemovefavButton.click();
             BrowserUtils.waitFor(1);
             new HomePage().favButton.click();
-        }else {new HomePage().favButton.click();}
+        }
 
     }
 
@@ -85,13 +99,13 @@ public class MessageFunctioinalityStepDefs {
 
     @And("selects add recipients")
     public void selectsAddRecipients() {
-        new HomePage().recipientsButton.click();
         BrowserUtils.waitFor(3);
+        new HomePage().recipientsButton.click();
+
     }
 
     @And("clicks on copy button")
     public void clicksOnCopyButton() {
-        new HomePage().moreButton.click();
         BrowserUtils.waitFor(2);
         new HomePage().copyButton.click();
     }
