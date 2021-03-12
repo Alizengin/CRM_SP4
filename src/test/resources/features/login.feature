@@ -7,8 +7,8 @@ Feature: Login Page
     Examples:
     | userType |
     | HR       |
-    | Helpdesk |
-    | Marketing|
+#    | Helpdesk |
+#    | Marketing|
 
 
   Scenario Outline: User should not be able to login with <Invalid_userType>
