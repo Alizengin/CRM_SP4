@@ -17,14 +17,14 @@ public class TaskPage  {
     @FindBy(id = "bx_left_menu_menu_tasks")
     public WebElement task;
 
-    @FindBy(id = "tasks-buttonAdd")
+    @FindBy(css = "a#tasks-buttonAdd")
     public WebElement NewTask;
 
     @FindBy(xpath = "(//button[@*='templateselector-open'])")
     public WebElement VerifyCreateTaskTempl;
 
-    @FindBy(css = "(//span[@class='task-options-item-param'])[1]")
-    public WebElement VerifyNewTaskWithResponsiblePerson;
+    @FindBy(xpath = "//span[@id='pagetitle'][contains(text(),'New task')]")
+    public WebElement VerifyNewTaskWindow;
 
     @FindBy(xpath = "//span[@class='side-panel-close-inner']")
     public WebElement closeNewTaskWindow;
@@ -70,6 +70,8 @@ public class TaskPage  {
 
     @FindBy(xpath = "(//span[@*='main-buttons-item-text-title'])[21]")
     public WebElement MoreTaskRecycleBin;
+
+
 
 
 

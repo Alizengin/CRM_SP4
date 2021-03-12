@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class TaskMenu_StepDef {
 
@@ -14,17 +15,26 @@ public class TaskMenu_StepDef {
     public void user_can_display_window_by_clicking_on(String Tasks) {
         TaskPage taskPage = new TaskPage();
         taskPage.task.click();
+
+
+        /*
+        BrowserUtils.waitFor(5);
+        Driver.get().switchTo().frame("iframe_0pfz1ssndw");
+        BrowserUtils.waitFor(2);
+        Driver.get().findElement(By.xpath("//span[@id='pagetitle'][contains(text(),'New task')]")).getText();
+         */
+
+        String Url_BeforeClickNewTask = Driver.get().getCurrentUrl();
+        System.out.println("URL before New task window = " + Url_BeforeClickNewTask);
         taskPage.NewTask.click();
 
-        String expectedResult = "Responsible person";
-        System.out.println("expectedResult = " + expectedResult);
         BrowserUtils.waitFor(3);
-     //   String actualResult = taskPage.VerifyNewTaskWithResponsiblePerson.getText();
-     //     System.out.println("actualResult = " + actualResult);
-    //    Assert.assertEquals(expectedResult,actualResult);
+        String Url_AfterClickNewTask = Driver.get().getCurrentUrl();
+
+        System.out.println("URL the New task window = " + Url_AfterClickNewTask);
+        Assert.assertNotEquals(Url_BeforeClickNewTask,Url_AfterClickNewTask);
 
         taskPage.closeNewTaskWindow.click();
-
 
     }
 

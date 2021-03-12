@@ -1,7 +1,8 @@
+@regression @smoke @wip
 Feature: manage User Setting
-    @wip
+
     Scenario: click and display your setting
-        Given the user logged in as "HR"
+        Given The user logged in as "HR"
         Given User can display create a new task window by clicking on "New Task".
         When User can display the task which is assisted by clicking Assisting
         And User can display Ongoing task.
