@@ -1,4 +1,4 @@
-@reg
+@smoke
 Feature: Quick navigation menu
 
   @message
@@ -115,6 +115,6 @@ Feature: Quick navigation menu
     Examples:
       | userType  |
       | HR        |
-      | Helpdesk  |
-      | Marketing |
+#      | Helpdesk  |
+#       | Marketing |
 
