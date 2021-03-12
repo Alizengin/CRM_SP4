@@ -14,6 +14,7 @@ public class LoginPageStepDefs {
 
         //go to login page
         Driver.get().get(ConfigurationReader.get("url"));
+        Driver.get().manage().window().maximize();
         //based on input enter that user information
         String username =null;
         String password =null;
