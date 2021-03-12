@@ -10,7 +10,7 @@ import org.junit.Assert;
 public class LoginPageStepDefs {
 
     @Given("the user logged in as {string}")
-    public void the_user_logged_in_as(String userType) {
+    public void theUserLoggedInAsString(String userType) {
 
         //go to login page
         Driver.get().get(ConfigurationReader.get("url"));

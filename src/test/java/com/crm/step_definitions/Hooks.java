@@ -1,5 +1,6 @@
 package com.crm.step_definitions;
 
+import com.crm.utilities.ConfigurationReader;
 import com.crm.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -10,7 +11,10 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
     @Before
     public void setUp(){
-        System.out.println("\tthis is coming from BEFORE");
+        String url = ConfigurationReader.get("url");
+        Driver.get().get(url);
+
+
     }
 
     @After
