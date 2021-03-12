@@ -20,9 +20,20 @@ public class LoginPage {
     @FindBy(className = "login-btn")
     public WebElement logIn;
 
+    @FindBy(xpath = "//*[@class='errortext']")
+    public WebElement allert;
+
+    @FindBy(xpath = "//*[@title='Activity Stream']")
+    public WebElement activityStream;
+
+
+
     public void login(String userNameStr, String passwordStr){
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
         logIn.click();
     }
+
+
+
 }
