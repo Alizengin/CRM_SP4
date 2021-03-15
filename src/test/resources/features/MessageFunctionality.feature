@@ -1,4 +1,5 @@
-@reg
+@smoke
+
 Feature: Message Functionality
 
 Background:
