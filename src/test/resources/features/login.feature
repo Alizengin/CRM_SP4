@@ -1,6 +1,6 @@
-
 Feature: Login Page
 
+@smoke
 
   Scenario Outline: Login with different accounts <userType>
       Given the user logged in as "<userType>"
@@ -10,6 +10,7 @@ Feature: Login Page
 #    | Helpdesk |
 #    | Marketing|
 
+@smoke
 
   Scenario Outline: User should not be able to login with <Invalid_userType>
     But the user can not logged in as "<Invalid_userType>"
