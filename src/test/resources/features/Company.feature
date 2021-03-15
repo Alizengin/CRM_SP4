@@ -1,4 +1,4 @@
-@regression @smoke
+@regression 
 Feature: Company Page
 
   Scenario Outline: Only valid for "HR" users.
