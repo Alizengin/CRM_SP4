@@ -85,13 +85,13 @@ public class LoginPageStepDefs {
             BrowserUtils.waitFor(2);
         }
     }
-
+/*
     @Then("the allert should not be {string}")
     public void the_allert_should_not_be(String expectedAllert) {
         String actualAllert= new LoginPage().allert.getText();
         Assert.assertFalse(expectedAllert.equals(actualAllert));
     }
-
+*/
     @Given("user is AFK {int} mins long")
     public void user_is_AFK_mins_long(Integer int1) throws InterruptedException {
         LoginPage lPage= new LoginPage();
